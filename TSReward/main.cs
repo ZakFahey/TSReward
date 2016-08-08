@@ -77,19 +77,9 @@ namespace TSREWARD
                 args.Player.SendErrorMessage("You need to be logged in to use this command!");
                 return;
             }
-            if (args.Parameters.Count < 1)
-            {
-                args.Player.SendErrorMessage("Invalid syntax! Proper syntax: {0}reward <port number>", TShock.Config.CommandSpecifier);
-                return;
-            }
-            if (getKey(args.Parameters[0]) == "npl")
-            {
-                args.Player.SendErrorMessage("Port {0} is not on the list!", args.Parameters[0]);
-                return;
-            }
             Thread t = new Thread(() =>
                 {
-                    switch (CheckVote(args.Player.Name , args.Parameters[0]))
+                    switch (CheckVote(args.Player.Name , "7777"))
                     {
                         case Response.InvalidServerKey:
                             args.Player.SendErrorMessage("The server key is incorrect! Please contact an administrator.");
@@ -108,17 +98,10 @@ namespace TSREWARD
                             for (int i = 0; i < config.OnRewardClaimMessage.Text.Length; i++)
                                 args.Player.SendMessage(config.OnRewardClaimMessage.Text[i], config.OnRewardClaimMessage.GetColor());
 
-                            if (SetAsClaimed(args.Player.Name, args.Parameters[0]))
+                            if (SetAsClaimed(args.Player.Name, "7777"))
                             {
-                                if (SEconomyPlugin.Instance != null)
-                                {
-                                    IBankAccount Server = SEconomyPlugin.Instance.GetBankAccount(TSServerPlayer.Server.User.ID);
-                                    IBankAccount Player = SEconomyPlugin.Instance.GetBankAccount(args.Player.Index);
-                                    Server.TransferToAsync(Player, config.SEconomyReward, config.AnnounceOnReceive ? BankAccountTransferOptions.AnnounceToReceiver : BankAccountTransferOptions.SuppressDefaultAnnounceMessages, "voting on terraria-servers.com", "Voted on terraria-servers.com");
-
-                                    for (int i = 0; i < config.Commands.Length; i++)
-                                        Commands.HandleCommand(TSPlayer.Server, config.Commands[i].Replace("%playername%", args.Player.Name));
-                                }
+                                for(int i = 0; i < config.Commands.Length; i++)
+                                    Commands.HandleCommand(TSPlayer.Server, config.Commands[i].Replace("%playername%", args.Player.Name));
                             }
                             return;
                     }

@@ -1,0 +1,9 @@
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\TSReward.dll
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\TSReward.pdb
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\TerrariaServer.exe
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\TShockAPI.dll
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\bin\Debug\Wolfje.Plugins.SEconomy.dll
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\obj\Debug\TSReward.csprojResolveAssemblyReference.cache
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\obj\Debug\TSReward.dll
+C:\Users\Zak\Documents\GitHub\TSReward\TSReward\obj\Debug\TSReward.pdb
